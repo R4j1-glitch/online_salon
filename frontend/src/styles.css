@@ -1,0 +1,164 @@
+/* ===== SalonBook base styles ===== */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: #f7f8fb;
+  color: #1f2937;
+}
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.navbar {
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 12px 24px;
+  display: flex; align-items: center; gap: 16px;
+  flex-wrap: wrap;
+}
+.navbar .brand { font-weight: 700; font-size: 18px; }
+.navbar .nav-links { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.navbar .user-chip {
+  background: #eef2ff; color: #3730a3;
+  padding: 4px 10px; border-radius: 999px; font-size: 12px;
+}
+.btn-link { background: none; border: none; color: #dc2626; cursor: pointer; padding: 0; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+
+.page { padding: 8px 0; }
+.page.narrow { max-width: 480px; margin: 0 auto; }
+
+.hero {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #fff; padding: 48px 24px; border-radius: 12px;
+  text-align: center; margin-bottom: 24px;
+}
+.hero h1 { margin: 0 0 8px; }
+.hero .hero-actions { margin-top: 16px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.muted { color: #6b7280; }
+.muted.small { font-size: 12px; }
+
+.card-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+.card {
+  background: #fff; border: 1px solid #e5e7eb;
+  border-radius: 10px; padding: 16px;
+}
+
+.form { display: grid; gap: 12px; }
+.form label { display: grid; gap: 4px; font-size: 14px; color: #374151; }
+.form input, .form select {
+  padding: 10px; border: 1px solid #d1d5db; border-radius: 6px;
+  font-size: 14px;
+}
+
+.btn {
+  display: inline-block; padding: 10px 16px; border-radius: 6px;
+  background: #fff; border: 1px solid #d1d5db; cursor: pointer;
+  font-size: 14px;
+}
+.btn.primary { background: #4f46e5; border-color: #4f46e5; color: #fff; }
+.btn.primary:disabled { opacity: 0.6; cursor: not-allowed; }
+.btn:hover { opacity: 0.95; }
+
+.error {
+  background: #fef2f2; color: #b91c1c;
+  border: 1px solid #fecaca; padding: 10px;
+  border-radius: 6px; margin-bottom: 12px;
+}
+
+@media (max-width: 600px) {
+  .navbar { padding: 10px 14px; }
+  .container { padding: 14px; }
+}
+
+/* ===== Stage 2 additions ===== */
+.row { display: flex; gap: 12px; flex-wrap: wrap; }
+.row label { flex: 1; min-width: 140px; }
+
+.salon-card { display: block; transition: transform .15s ease; }
+.salon-card:hover { transform: translateY(-2px); text-decoration: none; }
+
+.table { width: 100%; border-collapse: collapse; margin: 8px 0; }
+.table th, .table td { padding: 8px 10px; border-bottom: 1px solid #e5e7eb; text-align: left; font-size: 14px; }
+.table th { background: #f3f4f6; }
+
+.btn.small { padding: 6px 10px; font-size: 12px; margin-right: 6px; }
+.btn.danger { color: #b91c1c; border-color: #fecaca; }
+
+.success {
+  background: #ecfdf5; color: #065f46;
+  border: 1px solid #a7f3d0; padding: 10px;
+  border-radius: 6px; margin-bottom: 12px;
+}
+
+textarea { font-family: inherit; padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; }
+
+/* Password field with eye toggle */
+.pw-wrap {
+  position: relative; display: flex; align-items: center;
+}
+.pw-wrap input {
+  width: 100%; padding-right: 40px;
+}
+.pw-eye {
+  position: absolute; right: 4px; top: 50%; transform: translateY(-50%);
+  background: transparent; border: 0; cursor: pointer;
+  padding: 4px 8px; font-size: 16px; line-height: 1;
+}
+
+/* ===== Stage 3 additions ===== */
+.tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+.tabs .btn { padding: 6px 12px; }
+.fieldset { border: 1px solid #e5e7eb; border-radius: 6px; padding: 10px 14px; }
+.fieldset legend { padding: 0 6px; color: #374151; font-size: 13px; }
+.check { display: flex; gap: 8px; align-items: center; font-size: 14px; padding: 2px 0; }
+
+/* ===== Stage 4 additions ===== */
+.row.spread { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+
+.slot-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 8px; margin-top: 8px;
+}
+.slot {
+  padding: 8px 10px; border: 1px solid #d1d5db; background: #fff;
+  border-radius: 6px; cursor: pointer; font-size: 13px;
+}
+.slot:hover { background: #eef2ff; }
+.slot.selected { background: #4f46e5; color: #fff; border-color: #4f46e5; }
+
+.appt { padding: 14px; }
+.appt-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.appt h4 { margin: 0 0 6px; }
+
+.status {
+  font-size: 11px; padding: 4px 8px; border-radius: 999px;
+  background: #e5e7eb; color: #374151; text-transform: capitalize;
+}
+.status-pending,
+.status-urgent_pending       { background: #fef3c7; color: #92400e; }
+.status-accepted,
+.status-urgent_accepted      { background: #d1fae5; color: #065f46; }
+.status-rejected,
+.status-urgent_rejected      { background: #fee2e2; color: #991b1b; }
+.status-cancelled            { background: #f3f4f6; color: #6b7280; }
+.status-completed            { background: #e0e7ff; color: #3730a3; }
+
+.badge.urgent {
+  display: inline-block; margin-left: 8px; padding: 2px 8px; border-radius: 999px;
+  background: #fde68a; color: #92400e; font-size: 11px;
+}
+
+/* ===== Stage 5 additions ===== */
+.urgent-card { background: #fffbeb; border-color: #fde68a; margin-top: 16px; }
+.table.small th, .table.small td { padding: 4px 8px; font-size: 13px; }
+.table.small th { background: transparent; }
+.status-customer_proposed,
+.status-salon_countered,
+.status-pending { background: #fef3c7; color: #92400e; }
+.status-accepted { background: #d1fae5; color: #065f46; }
+.status-rejected { background: #fee2e2; color: #991b1b; }
